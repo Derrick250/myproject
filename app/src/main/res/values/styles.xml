@@ -5,4 +5,29 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="cardview">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:padding">30dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@color/white</item>
+
+    </style>
+
+    <style name="texts">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">40</item>
+        <item name="android:textSize">30dp</item>
+
+    </style>
+
+    <style name="images">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">60</item>
+    </style>
+
 </resources>
