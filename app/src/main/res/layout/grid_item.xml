@@ -30,7 +30,7 @@
                 android:layout_below="@id/grid_item_imageView"/>
 
             <TextView
-                android:textStyle="italic"
+                android:textStyle="bold"
                 android:id="@+id/grid_item_price"
                 android:textColor="@color/green"
                 android:layout_margin="5dp"

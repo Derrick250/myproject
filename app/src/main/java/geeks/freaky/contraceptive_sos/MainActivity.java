@@ -1,20 +1,29 @@
 
 package geeks.freaky.contraceptive_sos;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
 
-    CardView cardview;
-    CardView cardView1;
-    CardView cardView2;
-    Toolbar toolbar;
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private CategoryListAdapater adapter;
+    private Toolbar toolbar;
+    private ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,31 +33,104 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        cardview = (CardView)findViewById(R.id.card_view);
-        cardView1 = (CardView)findViewById(R.id.card_view1);
-        cardView2 = (CardView)findViewById(R.id.card_view2);
+        listView = (ListView) findViewById(android.R.id.list);
+        adapter = new CategoryListAdapater();
+        listView.setAdapter(adapter);
 
-        cardview.setOnClickListener(this);
-        cardView1.setOnClickListener(this);
-        cardView2.setOnClickListener(this);
 
-    }
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> myAdapter, View myView, int myItemInt, long mylng) {
+                String selectedFromList = (String) (listView.getItemAtPosition(myItemInt));
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.card_view:
-                System.out.println(">>>>>>>>>>>>>> Clicked 1");
-                Intent i = new Intent(this,CondomActivity.class);
-                startActivity(i);
-                break;
-            case R.id.card_view1:
-                System.out.println(">>>>>>>>>>>>>> Clicked 2");
-                break;
-            case R.id.card_view2:
-                System.out.println(">>>>>>>>>>>>>> Clicked 3");
-                break;
+                Log.d(TAG,  selectedFromList + " was clicked");
+
+                if(selectedFromList.equals("Condoms")){
+
+                    Intent i = new Intent(MainActivity.this,CondomActivity.class);
+                    startActivity(i);
+                }
+
+            }
+        });
+
+
+
+    }//end method onCreate
+
+    private class CategoryListAdapater extends BaseAdapter {
+
+        private LayoutInflater mInflater;
+
+
+        public CategoryListAdapater() {
+            mInflater = (LayoutInflater)
+                    getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        }//end constructor
+        public Integer[] mThumbIds = {
+                R.drawable.condom,
+                R.drawable.pill,
+                R.drawable.pregnancy
+        };
+
+        public String[] categories={"Condoms","Birth Control pills","Pregnancy testing kits"};
+
+        @Override
+        public int getCount() {
+            return categories.length;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return categories[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            //if we arent given a view inflate one
+            //if there's no recycled view passed in inflate one
+            final ViewHolder holder;
+            if (convertView == null) {
+
+                holder = new ViewHolder();
+                convertView = mInflater.inflate(R.layout.list_item, null);
+                holder.photo = (ImageView)
+                        convertView.findViewById(R.id.item_list_view_imageView);
+
+                holder.name = (TextView)
+                        convertView.findViewById(R.id.item_list_name);
+                convertView.setTag(holder);
+
+
+            }else {
+
+                holder = (ViewHolder)convertView.getTag();
+
+            }
+
+            holder.photo.setImageResource(mThumbIds[position]);
+            holder.photo.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            holder.name.setText(categories[position]);
+
+            return convertView;
+
+
 
         }
+    }//end class GridAdapter
+
+    class ViewHolder {
+
+        ImageView photo;
+        TextView name;
+
     }
-}
+
+
+}//end class MainActivity
