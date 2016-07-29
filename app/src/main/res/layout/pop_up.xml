@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/popup"
+    android:weightSum="1">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/spinner"
+        android:textSize = "20dp"
+        android:hint="University"
+        android:background="@color/white"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize = "20dp"
+        android:hint="Campus"
+        android:background="@color/white"
+        android:layout_margin="5dp"
+        android:id="@+id/spinner2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize = "20dp"
+        android:hint="Hostel"
+        android:layout_margin="5dp"
+        android:background="@color/white"
+        android:id="@+id/spinner3" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:hint="Room No"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Quantity"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:layout_weight="50"
+            android:padding="10dp"
+            android:id="@+id/editText" />
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:hint = "Ksh 0"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="50"
+            android:id="@+id/bCancel"
+            android:text="Cancel"
+            android:background="@drawable/button_shape_green"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:layout_margin="5dp"
+            android:text="Order"
+            android:id="@+id/bOrder"
+            android:background="@drawable/button_shape_green"/>
+
+    </LinearLayout>
+
+</LinearLayout>
