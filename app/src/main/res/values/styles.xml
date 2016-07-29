@@ -18,31 +18,21 @@
 
     </style>
 
-    <style name="texts">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_weight">40</item>
-        <item name="android:textSize">25dp</item>
-        <item name="android:textColor">#8B7500</item>
-
-    </style>
-
-    <style name="smallertexts">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">20dp</item>
-        <item name="android:textColor">#8B7500</item>
-
-    </style>
 
     <style name="images">
         <item name="android:layout_width">100dp</item>
         <item name="android:layout_height">100dp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_weight">60</item>
-        <!--<item name="android:scaleType">fitXY</item>-->
+
     </style>
 
+    <style name="categories">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        </style>
 </resources>
