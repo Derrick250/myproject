@@ -39,7 +39,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.card_view:
                 System.out.println(">>>>>>>>>>>>>> Clicked 1");
-                Intent i = new Intent(this,Condom.class);
+                Intent i = new Intent(this,CondomActivity.class);
                 startActivity(i);
                 break;
             case R.id.card_view1:

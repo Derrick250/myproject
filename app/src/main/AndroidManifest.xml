@@ -19,7 +19,7 @@
         </activity>
 
         <activity
-            android:name=".Condom"
+            android:name=".CondomActivity"
             android:label="Condoms">
         <meta-data android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity"/>
