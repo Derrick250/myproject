@@ -8,4 +8,5 @@
     <color name="background_activated">#B0E2FF</color>
     <color name="popup">#F0F0F0</color>
     <color name="green">#3CB371</color>
+    <color name="grey">#333</color>
 </resources>

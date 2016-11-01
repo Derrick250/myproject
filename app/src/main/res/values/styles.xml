@@ -27,12 +27,19 @@
 
     </style>
 
-    <style name="categories">
+    <style name="category_name">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_centerInParent">true</item>
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
         </style>
+
+    <style name="category_desc">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
 </resources>

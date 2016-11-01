@@ -9,19 +9,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.mikhaellopez.circularimageview.CircularImageView
+        <!--<com.mikhaellopez.circularimageview.CircularImageView
             app:civ_border_color="#EEEEEE"
             app:civ_border_width="4dp"
             app:civ_shadow="true"
             app:civ_shadow_radius="10"
             app:civ_shadow_color="@color/colorPrimaryDark"
             style = "@style/images"
+            android:id="@+id/item_list_view_imageView"/>-->
+        <com.android.volley.toolbox.NetworkImageView
+            style = "@style/images"
             android:id="@+id/item_list_view_imageView"/>
 
-        <TextView
-            android:id="@+id/item_list_name"
-            style="@style/categories"
-            android:layout_toRightOf="@id/item_list_view_imageView"/>
+           <TextView
+               android:id="@+id/item_list_name"
+               style="@style/category_name"
+               android:layout_toRightOf="@id/item_list_view_imageView"/>
+
+           <TextView
+               android:id="@+id/item_list_desc"
+               style="@style/category_desc"
+               android:layout_below="@id/item_list_name"
+               android:layout_toRightOf="@id/item_list_view_imageView"/>
+
+
 
     </RelativeLayout>
 
